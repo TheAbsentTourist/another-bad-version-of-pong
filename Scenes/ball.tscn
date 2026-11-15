@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://frvnlgr4y0nx"]
+
+[ext_resource type="Script" uid="uid://ncdxii4gclq6" path="res://Scripts/color_circle.gd" id="1_d60mj"]
+[ext_resource type="Script" uid="uid://ocmnv8bb67je" path="res://Scripts/ball.gd" id="1_ij5cq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au4rw"]
+
+[node name="Ball" type="CharacterBody2D" unique_id=235165004]
+script = ExtResource("1_ij5cq")
+
+[node name="ColorCircle" type="Node2D" parent="." unique_id=1550272288]
+script = ExtResource("1_d60mj")
+circle_radius = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=645848033]
+shape = SubResource("CircleShape2D_au4rw")
