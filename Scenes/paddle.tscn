@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b44sj06k1iaej"]
+
+[ext_resource type="Script" uid="uid://bx7h05pd6lsbn" path="res://Scenes/paddle.gd" id="1_krcey"]
+[ext_resource type="Script" uid="uid://ncdxii4gclq6" path="res://Scenes/color_circle.gd" id="1_nxw3c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_au4rw"]
+height = 100.0
+
+[node name="Paddle" type="CharacterBody2D" unique_id=573355836]
+script = ExtResource("1_krcey")
+
+[node name="ColorCircle" type="Node2D" parent="." unique_id=1381969771]
+position = Vector2(0, -40.005)
+script = ExtResource("1_nxw3c")
+circle_radius = 10.0
+
+[node name="ColorCircle2" type="Node2D" parent="." unique_id=1550148245]
+position = Vector2(0, 40)
+script = ExtResource("1_nxw3c")
+circle_radius = 10.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2061041566]
+offset_left = -10.0
+offset_top = -40.0
+offset_right = 10.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1882867415]
+shape = SubResource("CapsuleShape2D_au4rw")
