@@ -16,10 +16,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	
 	var direction = Input.get_axis("up", "down")
-	if direction != 0:
-		velocity.y = direction * speed
-	else:
-		velocity.y = 0.0
+	velocity.y = direction * speed
+	
 
 
 	
