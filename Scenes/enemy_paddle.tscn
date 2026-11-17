@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://djuefqn0lt1rg"]
+
+[ext_resource type="Script" uid="uid://ncdxii4gclq6" path="res://Scripts/color_circle.gd" id="1_q8ybj"]
+[ext_resource type="Script" uid="uid://b45q1vmq0n71s" path="res://Scripts/Entities/enemy_paddle.gd" id="1_r7ohg"]
+[ext_resource type="Script" uid="uid://cb8lujtcaxaei" path="res://Scripts/StateMachine/state_machine.gd" id="3_ba0y5"]
+[ext_resource type="Script" uid="uid://c7j58rcrj12b5" path="res://Scripts/States/waiting.gd" id="4_86lfl"]
+[ext_resource type="Script" uid="uid://bpt1mrgd7o4g3" path="res://Scripts/States/tracking.gd" id="5_m8tfs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r7ohg"]
+height = 100.0
+
+[node name="EnemyPaddle" type="CharacterBody2D" unique_id=1084922837]
+script = ExtResource("1_r7ohg")
+
+[node name="ColorCircle" type="Node2D" parent="." unique_id=561339485]
+position = Vector2(0, -40.005)
+script = ExtResource("1_q8ybj")
+circle_radius = 10.0
+
+[node name="ColorCircle2" type="Node2D" parent="." unique_id=1754126730]
+position = Vector2(0, 40)
+script = ExtResource("1_q8ybj")
+circle_radius = 10.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1615041918]
+offset_left = -10.0
+offset_top = -40.0
+offset_right = 10.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712228368]
+shape = SubResource("CapsuleShape2D_r7ohg")
+
+[node name="StateMachine" type="Node" parent="." unique_id=617358353 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_ba0y5")
+initial_state = NodePath("Waiting")
+metadata/_custom_type_script = "uid://cb8lujtcaxaei"
+
+[node name="Waiting" type="Node" parent="StateMachine" unique_id=2031766810]
+script = ExtResource("4_86lfl")
+
+[node name="Tracking" type="Node" parent="StateMachine" unique_id=224997134]
+script = ExtResource("5_m8tfs")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b44sj06k1iaej"]
 
-[ext_resource type="Script" uid="uid://cj5ejquciltlr" path="res://Scripts/paddle.gd" id="1_krcey"]
+[ext_resource type="Script" uid="uid://cj5ejquciltlr" path="res://Scripts/Entities/paddle.gd" id="1_krcey"]
 [ext_resource type="Script" uid="uid://ncdxii4gclq6" path="res://Scripts/color_circle.gd" id="1_nxw3c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_au4rw"]
